@@ -19,7 +19,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         ]
 px.set_mapbox_access_token('pk.eyJ1IjoiZXdpbGxpYW1zMjAyMCIsImEiOiJja2FpdTIxOXMwM2wzMnFtbmVmb3IzZDJ6In0.TVsQ-iu8bN4PQLkBCr6tQQ')
 
-allPoly = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/Trussville/master/allPoly.csv')
+allPoly = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/allPoly.csv')
 allGaps = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/Trussville/master/allGaps.csv')
 allLeaks = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/Trussville/master/allLeaksWin.csv')
 
@@ -43,8 +43,6 @@ whichMapOPTS = [
 countryOPTS = [  ]
 
 stateOPTS = [
-    {'label':'Polygon 1','value':"P1"},
-    {'label':'Polygon 2','value':"P2"},
     {'label':'Polygon 3','value':"P3"},
     {'label':'Polygon 4','value':"P4"},
     {'label':'Polygon 5','value':"P5"},
@@ -71,9 +69,7 @@ stateOPTS = [
 polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(1,18+1))]
 
 
-fnameDict = {'P1': allLeaks.loc[allLeaks.POLYGON == "P1",].LEAKNUM.unique(), 
-             'P2': allLeaks.loc[allLeaks.POLYGON == "P2",].LEAKNUM.unique(),
-             'P3': allLeaks.loc[allLeaks.POLYGON == "P3",].LEAKNUM.unique(),
+fnameDict = {'P3': allLeaks.loc[allLeaks.POLYGON == "P3",].LEAKNUM.unique(),
              'P4': allLeaks.loc[allLeaks.POLYGON == "P4",].LEAKNUM.unique(),
              'P5': allLeaks.loc[allLeaks.POLYGON == "P5",].LEAKNUM.unique(),
              'P6': allLeaks.loc[allLeaks.POLYGON == "P6",].LEAKNUM.unique(),
@@ -133,7 +129,7 @@ tab1=html.Div([
                             options = polyOPTS,
                             #multi=True,
                             #value=list(WELL_STATUSES.keys()),
-                            value = 'P1',
+                            value = 'P3',
                             className="dcc_control",
                         ),
                         html.P("Choose Leak Number:", className="control_label"),
@@ -259,7 +255,7 @@ tab2=html.Div([
                             options = stateOPTS,
                             #multi=True,
                             #value=list(WELL_STATUSES.keys()),
-                            value = 'P1',
+                            value = 'P3',
                             className="dcc_control",
                         ),
                         html.P("Choose Which Gap:", className="control_label"),
