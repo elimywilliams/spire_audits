@@ -20,7 +20,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
 px.set_mapbox_access_token('pk.eyJ1IjoiZXdpbGxpYW1zMjAyMCIsImEiOiJja2FpdTIxOXMwM2wzMnFtbmVmb3IzZDJ6In0.TVsQ-iu8bN4PQLkBCr6tQQ')
 
 allPoly = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/allPoly.csv')
-allGaps = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/Trussville/master/allGaps.csv')
+allGaps = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/allGaps.csv')
 allLeaks = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/Trussville/master/allLeaksWin.csv')
 
 #### CREATING A LIST OF THE POLYGONS THAT HAVE BEEN CHECKED
