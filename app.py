@@ -66,7 +66,7 @@ stateOPTS = [
     ]
                             #options=[{'label':opt, 'value':opt} for opt in nestedOptions],
 
-polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(1,18+1))]
+polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(3,18+1))]
 
 
 fnameDict = {
@@ -90,6 +90,27 @@ fnameDict = {
              #'P18': allLeaks.loc[allLeaks.POLYGON == "P18",].LEAKNUM.unique()
 
              }
+fnameDict = {
+             'P3': [0],
+             'P4': [0],
+             'P5':[0],
+             'P6': [0],
+
+             'P7': [0],
+             'P8': [0],
+             'P9': [0],
+             'P10': [0],
+             'P11': [0],
+             'P12': [0],
+             'P13': [0],
+             'P14': [0],
+             'P15': [0],
+
+             'P16': [0],
+             'P17': [0],
+             'P18': [0]
+
+             }
 
 
 gapSize = 10
@@ -105,15 +126,15 @@ for x in checked:
     gsizeDict[x] = allGaps.loc[allGaps.POLYGON==x,].portion.unique().size
 
 color_discrete_map_st = {}
-for x in list(range(1,18+1)):
+for x in list(range(3,18+1)):
     color_discrete_map_st[str("P") + str(x)] = 'rgb(255,0,0)'
 
 color_discrete_lks_st = {}
-for x in list(range(1,18+1)):
+for x in list(range(3,18+1)):
     color_discrete_lks_st[str("P") + str(x)] = 'rgb(255,255,255)'
 
 color_discrete_lks_ns = {}
-for x in list(range(1,18+1)):
+for x in list(range(3,18+1)):
     color_discrete_lks_ns[str("P") + str(x)] = 'rgb(0, 0, 99)'
  
 
@@ -126,18 +147,13 @@ tab1=html.Div([
                         html.P("Choose Polygon:", className="control_label"),
                        dcc.Dropdown(
                             id="whichPoly",
-                            #options=well_status_options,
                             options = polyOPTS,
-                            #multi=True,
-                            #value=list(WELL_STATUSES.keys()),
                             value = 'P3',
                             className="dcc_control",
                         ),
                         html.P("Choose Leak Number:", className="control_label"),
                         dcc.Dropdown(
                             id='opt-dropdown',
-                            #options=[{'label':opt, 'value':opt} for opt in nestedOptions],
-                            #value = nestedOptions[0]        
                             options = [],
                         ),
                         dcc.RadioItems(
@@ -383,16 +399,7 @@ app.layout = html.Div(
             [
                 html.Div(
                     [
-                        #html.Img(
-                        #    src = img,
-                            #src='data:image/png;base64,{}'.format(encoded_image.decode()),
-                         #   id="plotly-image",
-                         #   style={
-                         #       "height": "60px",
-                         #       "width": "auto",
-                         #       "margin-bottom": "25px",
-                         #   },
-                       # )
+
                     ],
                     className="one-third column",
                 ),
@@ -426,8 +433,7 @@ app.layout = html.Div(
                                 ),
                               dcc.Tabs(id="tabs-example", value='tab-1-example', children=[
                                   dcc.Tab(id="tab-1", label='Leak Indications', value='tab-1-example'),
-                                  dcc.Tab(id="tab-2", label='Gaps', value='tab-2-example'),
-                                 # dcc.Tab(id= 'tab-4',label = 'Weekly Info',value = 'tab-4-example')
+                                  dcc.Tab(id="tab-2", label='Gaps', value='tab-2-example')
                                   ])
 
                             ]
