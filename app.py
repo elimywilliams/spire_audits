@@ -67,28 +67,6 @@ stateOPTS = [
 
 polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(3,18+1))]
 
-
-fnameDict = {
-             #'P3': allLeaks.loc[allLeaks.POLYGON == "P3",].LEAKNUM.unique(),
-             #'P4': allLeaks.loc[allLeaks.POLYGON == "P4",].LEAKNUM.unique(),
-             #'P5': allLeaks.loc[allLeaks.POLYGON == "P5",].LEAKNUM.unique(),
-             #'P6': allLeaks.loc[allLeaks.POLYGON == "P6",].LEAKNUM.unique(),
-
-             #'P7': allLeaks.loc[allLeaks.POLYGON == "P7",].LEAKNUM.unique(),
-             #'P8': allLeaks.loc[allLeaks.POLYGON == "P8",].LEAKNUM.unique(),
-             #'P9': allLeaks.loc[allLeaks.POLYGON == "P9",].LEAKNUM.unique(),
-             #'P10': allLeaks.loc[allLeaks.POLYGON == "P10",].LEAKNUM.unique(),
-             #'P11': allLeaks.loc[allLeaks.POLYGON == "P11",].LEAKNUM.unique(),
-             #'P12': allLeaks.loc[allLeaks.POLYGON == "P12",].LEAKNUM.unique(),
-             #'P13': allLeaks.loc[allLeaks.POLYGON == "P13",].LEAKNUM.unique(),
-             #'P14': allLeaks.loc[allLeaks.POLYGON == "P14",].LEAKNUM.unique(),
-             #'P15': allLeaks.loc[allLeaks.POLYGON == "P15",].LEAKNUM.unique(),
-
-             #'P16': allLeaks.loc[allLeaks.POLYGON == "P16",].LEAKNUM.unique(),
-             #'P17': allLeaks.loc[allLeaks.POLYGON == "P17",].LEAKNUM.unique(),
-             #'P18': allLeaks.loc[allLeaks.POLYGON == "P18",].LEAKNUM.unique()
-
-             }
 fnameDict = {
              'P3': [0],
              'P4': [0],
@@ -110,6 +88,29 @@ fnameDict = {
              'P18': [0]
 
              }
+
+fnameDict = {
+             'P3': allLeaks.loc[allLeaks.POLYGON == "P3",].LEAKNUM.unique(),
+             'P4': allLeaks.loc[allLeaks.POLYGON == "P4",].LEAKNUM.unique(),
+             'P5': allLeaks.loc[allLeaks.POLYGON == "P5",].LEAKNUM.unique(),
+             'P6': allLeaks.loc[allLeaks.POLYGON == "P6",].LEAKNUM.unique(),
+
+             'P7': allLeaks.loc[allLeaks.POLYGON == "P7",].LEAKNUM.unique(),
+             'P8': allLeaks.loc[allLeaks.POLYGON == "P8",].LEAKNUM.unique(),
+             'P9': allLeaks.loc[allLeaks.POLYGON == "P9",].LEAKNUM.unique(),
+             'P10': allLeaks.loc[allLeaks.POLYGON == "P10",].LEAKNUM.unique(),
+             'P11': allLeaks.loc[allLeaks.POLYGON == "P11",].LEAKNUM.unique(),
+             'P12': allLeaks.loc[allLeaks.POLYGON == "P12",].LEAKNUM.unique(),
+             'P13': allLeaks.loc[allLeaks.POLYGON == "P13",].LEAKNUM.unique(),
+             'P14': allLeaks.loc[allLeaks.POLYGON == "P14",].LEAKNUM.unique(),
+             'P15': allLeaks.loc[allLeaks.POLYGON == "P15",].LEAKNUM.unique(),
+
+             'P16': allLeaks.loc[allLeaks.POLYGON == "P16",].LEAKNUM.unique(),
+             'P17': allLeaks.loc[allLeaks.POLYGON == "P17",].LEAKNUM.unique(),
+             'P18': allLeaks.loc[allLeaks.POLYGON == "P18",].LEAKNUM.unique()
+
+             }
+
 
 
 gapSize = 10
