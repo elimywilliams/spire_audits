@@ -725,6 +725,9 @@ def updateGapHover(hoverData,whichGap,whichMap):
 def updatePlot(whichPoly,whichLeak,whichMap):
      #plk = hoverData['points'][0]['customdata'][0]
      
+     if whichLeak = []:
+        return []
+     
      dat2 = allLeaks.loc[allLeaks.POLYGON == whichPoly,]
      dat = dat2.loc[dat2.LEAKNUM == whichLeak,]
      if whichMap == "sat":
