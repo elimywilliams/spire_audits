@@ -13,8 +13,6 @@ import dash_html_components as html
 import requests 
 import plotly.io as pio
 
-
-
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://raw.githubusercontent.com/elimywilliams/sc_covid19/master/header2.css'  ,
                         'https://github.com/plotly/dash-app-stylesheets/blob/master/dash-oil-and-gas.css'
@@ -66,63 +64,11 @@ stateOPTS = [
 
     {'label':'Polygon 16','value':"P16"},
     {'label':'Polygon 17','value':"P17"},
-    {'label':'Polygon 18','value':"P18"},
-
-    {'label':'Polygon 19','value':"P19"},
-    {'label':'Polygon 20','value':"P20"},
-    {'label':'Polygon 21','value':"P21"},
-
-    {'label':'Polygon 22','value':"P22"},
-    {'label':'Polygon 23','value':"P23"},
-    
-    {'label':'Polygon 24','value':"P24"},
-    {'label':'Polygon 25','value':"P25"},
-    {'label':'Polygon 26','value':"P26"},
-    {'label':'Polygon 27','value':"P27"},
-    {'label':'Polygon 28','value':"P28"},
-    {'label':'Polygon 29','value':"P29"},
-    {'label':'Polygon 30','value':"P30"},
-    {'label':'Polygon 31','value':"P31"},
-  
-    {'label':'Polygon 32','value':"P32"},
-    {'label':'Polygon 33','value':"P33"},
-    {'label':'Polygon 34','value':"P34"},
-    {'label':'Polygon 35','value':"P35"},
-    {'label':'Polygon 36','value':"P36"},
-    {'label':'Polygon 37','value':"P37"},
-
-    {'label':'Polygon 38','value':"P38"},
-    {'label':'Polygon 39','value':"P39"},
-    {'label':'Polygon 40','value':"P40"},
-    {'label':'Polygon 41','value':"P41"},
-    {'label':'Polygon 42','value':"P42"},
-    {'label':'Polygon 43','value':"P43"},
-    {'label':'Polygon 44','value':"P44"},
-    {'label':'Polygon 45','value':"P45"},
-    {'label':'Polygon 46','value':"P46"},
-  
-    {'label':'Polygon 47','value':"P47"},
-    {'label':'Polygon 48','value':"P48"},
-    {'label':'Polygon 49','value':"P49"},
-    {'label':'Polygon 50','value':"P50"},
-  
-    {'label':'Polygon 51','value':"P51"},
-    {'label':'Polygon 52','value':"P52"},
-    {'label':'Polygon 53','value':"P53"},
-    {'label':'Polygon 54','value':"P54"},
-    {'label':'Polygon 55','value':"P55"},
-    {'label':'Polygon 56','value':"P56"},
-    {'label':'Polygon 57','value':"P57"},
-
-    {'label':'Polygon 58','value':"P58"},
-    {'label':'Polygon 59','value':"P59"},
-    {'label':'Polygon 60','value':"P60"}
-
-
+    {'label':'Polygon 18','value':"P18"}
     ]
                             #options=[{'label':opt, 'value':opt} for opt in nestedOptions],
 
-polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(1,60+1))]
+polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(1,18+1))]
 
 
 fnameDict = {'P1': allLeaks.loc[allLeaks.POLYGON == "P1",].LEAKNUM.unique(), 
@@ -144,55 +90,7 @@ fnameDict = {'P1': allLeaks.loc[allLeaks.POLYGON == "P1",].LEAKNUM.unique(),
 
              'P16': allLeaks.loc[allLeaks.POLYGON == "P16",].LEAKNUM.unique(),
              'P17': allLeaks.loc[allLeaks.POLYGON == "P17",].LEAKNUM.unique(),
-             'P18': allLeaks.loc[allLeaks.POLYGON == "P18",].LEAKNUM.unique(),
-
-             'P19': allLeaks.loc[allLeaks.POLYGON == "P19",].LEAKNUM.unique(),
-             'P20': allLeaks.loc[allLeaks.POLYGON == "P20",].LEAKNUM.unique(),
-             'P21': allLeaks.loc[allLeaks.POLYGON == "P21",].LEAKNUM.unique(),
-             'P22': allLeaks.loc[allLeaks.POLYGON == "P22",].LEAKNUM.unique(),
-             'P23': allLeaks.loc[allLeaks.POLYGON == "P23",].LEAKNUM.unique(),
-             'P24': allLeaks.loc[allLeaks.POLYGON == "P24",].LEAKNUM.unique(),
-             'P25': allLeaks.loc[allLeaks.POLYGON == "P25",].LEAKNUM.unique(),
-             'P26': allLeaks.loc[allLeaks.POLYGON == "P26",].LEAKNUM.unique(),
-             'P27': allLeaks.loc[allLeaks.POLYGON == "P27",].LEAKNUM.unique(),
-             'P28': allLeaks.loc[allLeaks.POLYGON == "P28",].LEAKNUM.unique(),
-             'P29': allLeaks.loc[allLeaks.POLYGON == "P29",].LEAKNUM.unique(),
-             'P30': allLeaks.loc[allLeaks.POLYGON == "P30",].LEAKNUM.unique(),
-             'P31': allLeaks.loc[allLeaks.POLYGON == "P31",].LEAKNUM.unique(),
-             'P32': allLeaks.loc[allLeaks.POLYGON == "P32",].LEAKNUM.unique(),
-             'P33': allLeaks.loc[allLeaks.POLYGON == "P33",].LEAKNUM.unique(),
-             'P34': allLeaks.loc[allLeaks.POLYGON == "P34",].LEAKNUM.unique(),
-             'P35': allLeaks.loc[allLeaks.POLYGON == "P35",].LEAKNUM.unique(),
-             'P36': allLeaks.loc[allLeaks.POLYGON == "P36",].LEAKNUM.unique(),
-             'P37': allLeaks.loc[allLeaks.POLYGON == "P37",].LEAKNUM.unique(),
-
-             'P38': allLeaks.loc[allLeaks.POLYGON == "P38",].LEAKNUM.unique(),
-             'P39': allLeaks.loc[allLeaks.POLYGON == "P39",].LEAKNUM.unique(),
-             'P40': allLeaks.loc[allLeaks.POLYGON == "P40",].LEAKNUM.unique(),
-             'P41': allLeaks.loc[allLeaks.POLYGON == "P41",].LEAKNUM.unique(),
-             'P42': allLeaks.loc[allLeaks.POLYGON == "P42",].LEAKNUM.unique(),
-             'P43': allLeaks.loc[allLeaks.POLYGON == "P43",].LEAKNUM.unique(),
-             'P44': allLeaks.loc[allLeaks.POLYGON == "P44",].LEAKNUM.unique(),
-             'P45': allLeaks.loc[allLeaks.POLYGON == "P45",].LEAKNUM.unique(),
-             'P46': allLeaks.loc[allLeaks.POLYGON == "P46",].LEAKNUM.unique(),
-             
-             'P47': allLeaks.loc[allLeaks.POLYGON == "P47",].LEAKNUM.unique(),
-             'P48': allLeaks.loc[allLeaks.POLYGON == "P48",].LEAKNUM.unique(),
-             'P49': allLeaks.loc[allLeaks.POLYGON == "P49",].LEAKNUM.unique(),
-             'P50': allLeaks.loc[allLeaks.POLYGON == "P50",].LEAKNUM.unique(),
-             
-             'P51': allLeaks.loc[allLeaks.POLYGON == "P51",].LEAKNUM.unique(),
-             'P52': allLeaks.loc[allLeaks.POLYGON == "P52",].LEAKNUM.unique(),
-             'P53': allLeaks.loc[allLeaks.POLYGON == "P53",].LEAKNUM.unique(),
-             'P54': allLeaks.loc[allLeaks.POLYGON == "P54",].LEAKNUM.unique(),
-             'P55': allLeaks.loc[allLeaks.POLYGON == "P55",].LEAKNUM.unique(),
-             'P56': allLeaks.loc[allLeaks.POLYGON == "P56",].LEAKNUM.unique(),
-
-             'P57': allLeaks.loc[allLeaks.POLYGON == "P57",].LEAKNUM.unique(),
-
-             'P58': allLeaks.loc[allLeaks.POLYGON == "P58",].LEAKNUM.unique(),
-             'P59': allLeaks.loc[allLeaks.POLYGON == "P59",].LEAKNUM.unique(),
-             'P60': allLeaks.loc[allLeaks.POLYGON == "P60",].LEAKNUM.unique()
+             'P18': allLeaks.loc[allLeaks.POLYGON == "P18",].LEAKNUM.unique()
 
              }
 
@@ -210,15 +108,15 @@ for x in checked:
     gsizeDict[x] = allGaps.loc[allGaps.POLYGON==x,].portion.unique().size
 
 color_discrete_map_st = {}
-for x in list(range(1,60+1)):
+for x in list(range(1,18+1)):
     color_discrete_map_st[str("P") + str(x)] = 'rgb(255,0,0)'
 
 color_discrete_lks_st = {}
-for x in list(range(1,60+1)):
+for x in list(range(1,18+1)):
     color_discrete_lks_st[str("P") + str(x)] = 'rgb(255,255,255)'
 
 color_discrete_lks_ns = {}
-for x in list(range(1,60+1)):
+for x in list(range(1,18+1)):
     color_discrete_lks_ns[str("P") + str(x)] = 'rgb(0, 0, 99)'
  
 
@@ -510,7 +408,7 @@ app.layout = html.Div(
                                     style={"margin-bottom": "0px"},
                                 ),
                                 html.H5(
-                                    "Trussville, AL", style={"margin-top": "0px"}
+                                    "Spire, AL", style={"margin-top": "0px"}
                                 ),
                             ]
                         )
@@ -527,7 +425,7 @@ app.layout = html.Div(
                                     style={"margin-bottom": "0px"},
                                 ),
                                 html.H5(
-                                    '10.26.20', style={"margin-top": "0px"}
+                                    '12.02.20', style={"margin-top": "0px"}
                                 ),
                               dcc.Tabs(id="tabs-example", value='tab-1-example', children=[
                                   dcc.Tab(id="tab-1", label='Leak Indications', value='tab-1-example'),
