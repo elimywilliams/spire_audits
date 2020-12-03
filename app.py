@@ -22,6 +22,7 @@ px.set_mapbox_access_token('pk.eyJ1IjoiZXdpbGxpYW1zMjAyMCIsImEiOiJja2FpdTIxOXMwM
 allPoly = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/allPoly.csv')
 allGaps = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/allGaps.csv')
 allLeaks = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/allLeaksWin.csv')
+
 #### CREATING A LIST OF THE POLYGONS THAT HAVE BEEN CHECKED
 checked = []
 for x in range(0,len(allGaps.POLYGON.unique())):
@@ -63,31 +64,9 @@ stateOPTS = [
     {'label':'Polygon 17','value':"P17"},
     {'label':'Polygon 18','value':"P18"}
     ]
-                            #options=[{'label':opt, 'value':opt} for opt in nestedOptions],
 
 polyOPTS = [{'label':str('Polygon ') + str(x),'value':str('P')+str(x)} for x in list(range(3,18+1))]
 
-fnameDict = {
-             'P3': [0],
-             'P4': [0],
-             'P5':[0],
-             'P6': [0],
-
-             'P7': [0],
-             'P8': [0],
-             'P9': [0],
-             'P10': [0],
-             'P11': [0],
-             'P12': [0],
-             'P13': [0],
-             'P14': [0],
-             'P15': [0],
-
-             'P16': [0],
-             'P17': [0],
-             'P18': [0]
-
-             }
 
 fnameDict = {
              'P3': allLeaks.loc[allLeaks.POLYGON == "P3",].LEAKNUM.unique(),
@@ -180,14 +159,6 @@ tab1=html.Div([
     html.Div(id='output-provider')
 ],className = 'dcc_control')
 
-                       # dcc.RadioItems(
-                       #     id="popratiostate",
-                       #     options=popOPTS,
-                       #     value="nonrelpop",
-                       #     labelStyle={"display": "inline-block"},
-                       #     className="dcc_control",
-                       # ),
-                        
                     ],
                     className="pretty_container four columns",
                     id="cross-filter-options-state",
@@ -206,17 +177,6 @@ tab1=html.Div([
                                      id="polygonLks",
                                      className="mini_container",
                                  ),
-                               
-                                # html.Div(
-                                #     [html.H6(id="oilText"), html.P("")],
-                                #     id="oil",
-                                #     className="mini_container",
-                                # ),
-                                # html.Div(
-                                #     [html.H6(id="waterText"), html.P("")],
-                                #     id="water",
-                                #     className="mini_container",
-                                # ),
                             ],
                             id="info-container-state",
                             className="row container-display",
@@ -234,12 +194,8 @@ tab1=html.Div([
                     [dcc.Graph(id="leakGraph")],
                     className="pretty_container seven columns",
                 ),
-                #html.Div(
-                #    [dcc.Graph(id="statePredGraph")],
-                #    className="pretty_container five columns",
-                #),
                 html.Div(
-                    [dcc.Graph(id='hover-data-plot')],#,id="hover-data-plot")],
+                    [dcc.Graph(id='hover-data-plot')],
                     className="pretty_container five columns"),
             ],
             className="row flex-display",
@@ -247,13 +203,9 @@ tab1=html.Div([
         html.Div(
              [
                  html.Div(id='hover-data-info',
-                     #[dcc.Markdown(id="hover-data-info")],
                      className="pretty_container seven columns",
                  ),
-        #         html.Div(
-        #             [dcc.Graph(id="aggregate_graph")],
-        #             className="pretty_container five columns",
-        #         ),
+
              ],
              className="row flex-display",
          )
@@ -268,21 +220,14 @@ tab2=html.Div([
                         html.P("Choose Polygon:", className="control_label"),
                        dcc.Dropdown(
                             id="whichPolyGap",
-                            #options=well_status_options,
                             options = stateOPTS,
-                            #multi=True,
-                            #value=list(WELL_STATUSES.keys()),
                             value = 'P3',
                             className="dcc_control",
                         ),
                         html.P("Choose Which Gap:", className="control_label"),
                         dcc.Dropdown(
                             id="whichGapPack",
-                            #options=[{'label':opt, 'value':opt} for opt in stat_nestedOptions],
-                            #value = stat_nestedOptions[0],
                             options=[],
-                            #multi=True,
-                            #value=list(WELL_TYPES.keys()),
                             className="dcc_control",
                         ),
                         dcc.RadioItems(
@@ -293,7 +238,6 @@ tab2=html.Div([
                             className="dcc_control"
                             
                         ), html.A(html.Button('Get Route'),
-    #href='https://github.com/czbiohub/singlecell-dash/issues/new',
     id = 'gap_dir',target='_blank',
     ),
                                    html.Div( [
@@ -307,15 +251,6 @@ tab2=html.Div([
     ),
     html.Div(id='output-provider2')
 ],className = 'dcc_control')
-
-
-                        # dcc.RadioItems(
-                        #     id="popratiostate",
-                        #     options=popOPTS,
-                        #     value="nonrelpop",
-                        #     labelStyle={"display": "inline-block"},
-                        #     className="dcc_control",
-                        # ),
                         
                     ],
                     className="pretty_container four columns",
