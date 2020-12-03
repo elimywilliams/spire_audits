@@ -28,21 +28,13 @@ checked = []
 for x in range(0,len(allGaps.POLYGON.unique())):
     checked.append(allGaps.POLYGON.unique()[x])
 
-projOPTS = [        ]
-
-whichAvgOPTS = []
-
-popOPTS = [ ]
-
 whichMapOPTS = [
     {'label':'Satellite Map','value':'sat'},
     {'label':'Street Map', 'value':'street'}
        
     ]
 
-countryOPTS = [  ]
-
-stateOPTS = [
+polyLkOPTS = [
     {'label':'Polygon 3','value':"P3"},
     {'label':'Polygon 4','value':"P4"},
     {'label':'Polygon 5','value':"P5"},
@@ -89,16 +81,6 @@ fnameDict = {
              'P18': allLeaks.loc[allLeaks.POLYGON == "P18",].LEAKNUM.unique()
 
              }
-
-
-
-gapSize = 10
-gnameDict = {'P1':list(range(1,int(allGaps.loc[allGaps.POLYGON == 'P1',].portion.unique().size/gapSize)+1)),
-             'P2':list(range(1,int(allGaps.loc[allGaps.POLYGON == 'P2',].portion.unique().size/gapSize)+1)),
-             'P3':list(range(1,int(allGaps.loc[allGaps.POLYGON == 'P3',].portion.unique().size/gapSize)+1)),
-             'P4':list(range(1,int(allGaps.loc[allGaps.POLYGON == 'P4',].portion.unique().size/gapSize)+1))             
-             }
-
 
 gsizeDict = {}
 for x in checked:
@@ -220,7 +202,7 @@ tab2=html.Div([
                         html.P("Choose Polygon:", className="control_label"),
                        dcc.Dropdown(
                             id="whichPolyGap",
-                            options = stateOPTS,
+                            options = polyLkOPTS,
                             value = 'P3',
                             className="dcc_control",
                         ),
@@ -310,10 +292,7 @@ tab2=html.Div([
                      #[dcc.Markdown(id="hover-data-info")],
                      className="pretty_container seven columns",
                  ),
-        #         html.Div(
-        #             [dcc.Graph(id="aggregate_graph")],
-        #             className="pretty_container five columns",
-        #         ),
+
              ],
              className="row flex-display",
          )
@@ -404,8 +383,7 @@ def render_content(tab):
         return tab1
     elif tab == 'tab-2-example':
         return tab2
-    #elif tab == 'tab-4-example':
-    #    return tab4
+
 
 @app.callback(dash.dependencies.Output('leakGraph', 'figure'),
               [dash.dependencies.Input('whichPoly', 'value'),
@@ -424,13 +402,13 @@ def update_polyLeak(whichPolygon,whichMap):
         
     usepoly = allPoly.loc[allPoly.POLYGON == whichPolygon,:]
     usepoly2 = usepoly.loc[usepoly.portion == 1,:]
-    if whichPolygon == 'P2':
-        usepoly2 = usepoly.loc[usepoly.portion == 1,:]
+    #if whichPolygon == 'P2':
+    #    usepoly2 = usepoly.loc[usepoly.portion == 1,:]
 
-    if whichPolygon == "P5" or whichPolygon == "P58" or whichPolygon == "P59" or whichPolygon == "P8" or whichPolygon == "P7" or whichPolygon == "P10" or whichPolygon == "P11":
-        usepoly2 = usepoly.loc[usepoly.portion == 1,:]
-    if whichPolygon == "P23":
-        usepoly2 = usepoly.loc[usepoly.portion == 3,:]
+    #if whichPolygon == "P5" or whichPolygon == "P58" or whichPolygon == "P59" or whichPolygon == "P8" or whichPolygon == "P7" or whichPolygon == "P10" or whichPolygon == "P11":
+    #    usepoly2 = usepoly.loc[usepoly.portion == 1,:]
+    #if whichPolygon == "P23":
+    #    usepoly2 = usepoly.loc[usepoly.portion == 3,:]
 
     fig = px.line_mapbox(
         usepoly2,
@@ -479,8 +457,6 @@ def update_date_dropdown(name):
 def updateGapOpts(whichPoly):
         
     options = [{'label':i, 'value':i} for i in allGaps.loc[allGaps.POLYGON == whichPoly,'portion'].unique()]
-    #relDict = gapsDict[whichPoly]
-    #options=[{'label':i, 'value':i} for i in range(1,len(relDict)+1)]
     return options
 
 
@@ -492,17 +468,13 @@ def updateGapOpts(whichPoly):
                ]
               )
 def newGapGraph(whichPolygon,whichMap,whichGapPack):
-    #gapwoo = gapsDict[whichPolygon][str(whichGapPack)]
     usegap = allGaps.loc[allGaps.POLYGON == whichPolygon,:]
-    #usegapsmall = usegap[usegap['portion'].isin(gapwoo)]
     usegapsmall = usegap.loc[usegap['portion']== whichGapPack,:]
     
     if usegapsmall.loc[:,'multiple'].reset_index(drop=True)[0] == True:
         firstgapsmall = usegapsmall.loc[usegapsmall.subportion == 1,]
         secgapsmall = usegapsmall.loc[usegapsmall.subportion == 2,]
 
-        #usepoly = allPoly.loc[allPoly.POLYGON == whichPolygon,:]
-        #usepoly2 = usepoly.loc[usepoly.portion == 3,:]
         if whichMap == "sat":
             color_discrete_lks = color_discrete_map_st
         elif whichMap != 'sat':
@@ -517,7 +489,6 @@ def newGapGraph(whichPolygon,whichMap,whichGapPack):
                     hover_data = {'portion'}
                     )
         fig.update_layout(
-                 #autosize=True,
                  width = 800,
                  height = 800,
                  showlegend = False,
@@ -539,8 +510,6 @@ def newGapGraph(whichPolygon,whichMap,whichGapPack):
         fig.update_traces(line=dict(width=6))
         
     elif usegapsmall.loc[:,'multiple'].reset_index(drop=True)[0] == False:    
-        #usepoly = allPoly.loc[allPoly.POLYGON == whichPolygon,:]
-        #usepoly2 = usepoly.loc[usepoly.portion == 3,:]
         if whichMap == "sat":
             color_discrete_lks = color_discrete_map_st
         elif whichMap != 'sat':
