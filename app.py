@@ -322,7 +322,7 @@ app.layout = html.Div(
                         html.Div(
                             [
                                 html.H3(
-                                    "Southern Cross Gap and Leak Indication",
+                                    "Southern Cross Audits",
                                     style={"margin-bottom": "0px"},
                                 ),
                                 html.H5(
