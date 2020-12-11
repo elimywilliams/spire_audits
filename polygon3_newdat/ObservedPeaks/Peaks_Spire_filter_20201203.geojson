@@ -1,0 +1,24 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606993436.9", "pk_LON": -86.819116050914005, "pk_LAT": 33.545847016401723 }, "geometry": { "type": "Point", "coordinates": [ -86.819116050914005, 33.545847016401723 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606995805.4", "pk_LON": -86.814976588935139, "pk_LAT": 33.552433485211715 }, "geometry": { "type": "Point", "coordinates": [ -86.814976588935139, 33.552433485211715 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606995833.5", "pk_LON": -86.814468383799991, "pk_LAT": 33.551353454600005 }, "geometry": { "type": "Point", "coordinates": [ -86.814468383799991, 33.551353454600005 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606995849.4", "pk_LON": -86.814761111552826, "pk_LAT": 33.552076038368845 }, "geometry": { "type": "Point", "coordinates": [ -86.814761111552826, 33.552076038368845 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606995882.2", "pk_LON": -86.815481606928145, "pk_LAT": 33.553791763766789 }, "geometry": { "type": "Point", "coordinates": [ -86.815481606928145, 33.553791763766789 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606995897.5", "pk_LON": -86.81583470743243, "pk_LAT": 33.554642197230343 }, "geometry": { "type": "Point", "coordinates": [ -86.81583470743243, 33.554642197230343 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606995913.9", "pk_LON": -86.816209783719657, "pk_LAT": 33.555521445329653 }, "geometry": { "type": "Point", "coordinates": [ -86.816209783719657, 33.555521445329653 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606995931.3", "pk_LON": -86.816637749038193, "pk_LAT": 33.556516159776379 }, "geometry": { "type": "Point", "coordinates": [ -86.816637749038193, 33.556516159776379 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606995966.1", "pk_LON": -86.817420392237707, "pk_LAT": 33.558291235328227 }, "geometry": { "type": "Point", "coordinates": [ -86.817420392237707, 33.558291235328227 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606996003.3", "pk_LON": -86.818302531430021, "pk_LAT": 33.560347294462559 }, "geometry": { "type": "Point", "coordinates": [ -86.818302531430021, 33.560347294462559 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606996053.2", "pk_LON": -86.817176414735869, "pk_LAT": 33.557625347618057 }, "geometry": { "type": "Point", "coordinates": [ -86.817176414735869, 33.557625347618057 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606996068.5", "pk_LON": -86.815894250579177, "pk_LAT": 33.557743148098972 }, "geometry": { "type": "Point", "coordinates": [ -86.815894250579177, 33.557743148098972 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606996140.2", "pk_LON": -86.813799812364664, "pk_LAT": 33.552857914129554 }, "geometry": { "type": "Point", "coordinates": [ -86.813799812364664, 33.552857914129554 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606996203.2", "pk_LON": -86.815012945192677, "pk_LAT": 33.558162333196741 }, "geometry": { "type": "Point", "coordinates": [ -86.815012945192677, 33.558162333196741 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606996216.3", "pk_LON": -86.813485524407227, "pk_LAT": 33.558602505524313 }, "geometry": { "type": "Point", "coordinates": [ -86.813485524407227, 33.558602505524313 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1606996284.9", "pk_LON": -86.809396710388341, "pk_LAT": 33.556942490758807 }, "geometry": { "type": "Point", "coordinates": [ -86.809396710388341, 33.556942490758807 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1607001217.6", "pk_LON": -86.823972577070975, "pk_LAT": 33.554476866659485 }, "geometry": { "type": "Point", "coordinates": [ -86.823972577070975, 33.554476866659485 ] } },
+{ "type": "Feature", "properties": { "OP_NUM": "Spire_filter_1607002303.7", "pk_LON": -86.826834516448727, "pk_LAT": 33.553582262871814 }, "geometry": { "type": "Point", "coordinates": [ -86.826834516448727, 33.553582262871814 ] } }
+]
+}
