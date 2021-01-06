@@ -22,7 +22,7 @@ px.set_mapbox_access_token('pk.eyJ1IjoiZXdpbGxpYW1zMjAyMCIsImEiOiJja2FpdTIxOXMwM
 allPoly = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/allPoly.csv')
 allGaps = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/allGaps.csv')
 allLeaks = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/allLeaksWin.csv')
-allLeaks = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/polygon3_h/allLeaksWin.csv')
+#allLeaks = pd.read_csv('https://raw.githubusercontent.com/elimywilliams/spire_audits/master/polygon3_h/allLeaksWin.csv')
 
 #### CREATING A LIST OF THE POLYGONS THAT HAVE BEEN CHECKED
 checked = []
