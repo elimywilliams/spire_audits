@@ -63,13 +63,14 @@ def getGapInfo(gap_df, polygon):
 
 
 gaps4 = gpd.read_file('/Users/emilywilliams/Documents/GitHub/spire_audits_corrected/Polygon4/Gaps_4.shp')
-
 gap4info = getGapInfo(gaps4, 'P4')
 
+gaps5 = gpd.read_file('/Users/emilywilliams/Documents/GitHub/spire_audits_corrected/Polygon5/Gaps_5.shp')
+gap5info = getGapInfo(gaps5, 'P5')
 
 #gapsTogether = gap1info.append(
 #    [gap2info, gap3info, gap4info, gap5info, gap7info, gap8info, gap10info, gap11info, gap58info, gap59info, gap22info])
-gapsTogether = gap4info.copy()
+gapsTogether = gap4info.append([gap5info])
 
 gapsTogether.to_csv('/Users/emilywilliams/Documents/GitHub/spire_audits/allGaps.csv')
 
