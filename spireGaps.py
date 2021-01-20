@@ -14,7 +14,9 @@ def getGapInfo(gap_df, polygon):
         idloc = 'OBJECTID_1'
     elif 'OBJECTID_1' not in gap_df.columns:
         idloc = 'OBJECTID'
-
+        
+    if polygon == 'P8':
+        idloc = 'OBJECTID'
     x = 0
     xportion = gap_df.reset_index()[idloc][x]
 
@@ -71,9 +73,16 @@ gap5info = getGapInfo(gaps5, 'P5')
 gaps6 = gpd.read_file('/Users/emilywilliams/Documents/GitHub/spire_audits_corrected/Polygon6/Gaps_6.shp')
 gap6info = getGapInfo(gaps6, 'P6')
 
+gaps7 = gpd.read_file('/Users/emilywilliams/Documents/GitHub/spire_audits_corrected/Polygon7/Gaps_7.shp')
+gap7info = getGapInfo(gaps7, 'P7')
+
+gaps8 = gpd.read_file('/Users/emilywilliams/Documents/GitHub/spire_audits_corrected/Polygon8/Gaps_8.shp')
+gap8info = getGapInfo(gaps8, 'P8')
+
+
 #gapsTogether = gap1info.append(
 #    [gap2info, gap3info, gap4info, gap5info, gap7info, gap8info, gap10info, gap11info, gap58info, gap59info, gap22info])
-gapsTogether = gap4info.append([gap5info,gap6info])
+gapsTogether = gap4info.append([gap5info,gap6info,gap7info,gap8info])
 
 gapsTogether.to_csv('/Users/emilywilliams/Documents/GitHub/spire_audits/allGaps.csv')
 
