@@ -9,9 +9,12 @@ from plotly.subplots import make_subplots
 import plotly.express as px
 import json
 import bs4 as bs
-import dash_html_components as html
+import dash_html_components as htmllast
 import requests 
 import plotly.io as pio
+#from datetime import date
+#today = date.today()
+
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://raw.githubusercontent.com/elimywilliams/sc_covid19/master/header2.css'  ,
@@ -344,7 +347,7 @@ app.layout = html.Div(
                                     style={"margin-bottom": "0px"},
                                 ),
                                 html.H5(
-                                    '1.18.21', style={"margin-top": "0px"}
+                                    '1.20.21', style={"margin-top": "0px"}
                                 ),
                               dcc.Tabs(id="tabs-example", value='tab-1-example', children=[
                                   dcc.Tab(id="tab-1", label='Leak Indications', value='tab-1-example'),
