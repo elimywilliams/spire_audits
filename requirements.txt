@@ -29,4 +29,4 @@ Werkzeug==0.15.4
 bs4==0.0.1
 beautifulsoup4==4.7.1
 requests == 2.23.0
-pillow == 7.1.2
+pillow == 9.3.0
